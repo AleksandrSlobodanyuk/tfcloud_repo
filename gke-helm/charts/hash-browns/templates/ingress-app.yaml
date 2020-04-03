@@ -1,14 +1,14 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: ingress-hello-app
+  name: ingress-hash-browns
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
   - http: 
       paths:
-      - path: /helloworld
+      - path: /
         backend:
-          serviceName: hello-app
+          serviceName: hash-browns
           servicePort: 8080

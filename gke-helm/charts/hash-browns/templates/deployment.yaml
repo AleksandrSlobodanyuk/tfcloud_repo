@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-app
+  name: hash-browns
   labels:
-    app: hello-app
+    app: hash-browns
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: hello-app
+      app: hash-browns
       tier: web
   template:
     metadata:
       labels:
-        app: hello-app
+        app: hash-browns
         tier: web
     spec:
       containers:
-      - name: hello-app
-        image: gcr.io/google-samples/hello-app:1.0
+      - name: hash-browns
+        image: alexellis2/hash-browns
         ports:
         - containerPort: 8080

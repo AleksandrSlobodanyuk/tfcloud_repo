@@ -47,17 +47,17 @@ module "gke" {
   node_pools = [
     {
       name               = "default-node-pool"
-      machine_type       = "n1-standard-1"
+      machine_type       = "n1-standard-2"
       min_count          = 1
-      max_count          = 6
+      max_count          = 10
       local_ssd_count    = 0
       disk_size_gb       = 60
       disk_type          = "pd-standard"
       image_type         = "COS"
       auto_repair        = true
       auto_upgrade       = true
-      preemptible        = false
-      initial_node_count = 3
+      preemptible        = true
+      initial_node_count = 5
     },
   ]
 

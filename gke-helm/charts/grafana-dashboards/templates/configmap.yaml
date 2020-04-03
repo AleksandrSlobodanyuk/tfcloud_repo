@@ -1,0 +1,16 @@
+{{ $root := . }}
+{{ range $path, $bytes := .Files.Glob "dashboards/*.json" }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $.Release.Name }}-{{ trimSuffix ".json" $path | trimPrefix "dashboards/" }}
+  labels:
+    grafana_dashboard: "1"
+    chart: {{ $.Chart.Name }}-{{ $.Chart.Version | replace "+" "_" }}
+    release: {{ $.Release.Name }}
+    heritage: {{ $.Release.Service }}
+data:
+  {{ trimPrefix "dashboards/" $path }}: |-
+    {{- $root.Files.Get $path | nindent 4 }}
+{{- end }}
