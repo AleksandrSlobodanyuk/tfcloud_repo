@@ -39,23 +39,6 @@ variable "daily_maintenance_window_start_time" {
   default = "03:00"
 } 
 
-variable "node_pools"{
-  default =[
-  {
-    name                       = "default"
-    initial_node_count         = 1
-    autoscaling_min_node_count = 2
-    autoscaling_max_node_count = 3
-    management_auto_upgrade    = true
-    management_auto_repair     = true
-    node_config_machine_type   = "n1-standard-1"
-    node_config_disk_type      = "pd-standard"
-    node_config_disk_size_gb   = 100
-    node_config_preemptible    = false
-  },
-]
-
-}
 
 variable "vpc_network_name" {
   default = "vpc-network"
@@ -105,12 +88,4 @@ variable "master_authorized_networks_cidr_blocks" {
     display_name = "default"
   },
 ]
-}
-
-variable "helm_version" {
-  default = "v2.16.5"
-}
-
-variable "helm_account_name" {
-  default = "helm"
 }
