@@ -1,3 +1,0 @@
-- job_name: "hash-browns"
-  static_configs:
-  - targets: ["http://hash-browns.default:8080"]
