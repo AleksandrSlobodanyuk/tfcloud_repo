@@ -23,6 +23,7 @@ provider "google-beta" {
   credentials = var.service_account_key
 }
 
+# Configure the Helm 3 provider
 provider "helm" {
   kubernetes {
     load_config_file       = false
@@ -40,5 +41,6 @@ resource "google_project_service" "gcp_services" {
   disable_on_destroy = false
 }
 
+# Enable Project metadata gathering
 data "google_project" "project" {
 }
