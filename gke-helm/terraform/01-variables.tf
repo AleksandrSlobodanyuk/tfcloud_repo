@@ -1,6 +1,6 @@
 variable "gcp_project_id" {
   description = "The project to deploy to, if not set the default provider project is used."
-  default     = "gke-test-272906"
+  default     = "test-k8s-272906"
 }
 
 variable "service_account_key" {

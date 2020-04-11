@@ -1,7 +1,7 @@
 # Configure Google Cloud Storage bucket as TFSTATE backend
 terraform {
   backend "gcs" {
-    bucket      = "gke-bucket-55"
+    bucket      = "k8s-state-bucket"
     prefix      = "k8app/state"
     credentials = "../k8s-svc.json"
   }

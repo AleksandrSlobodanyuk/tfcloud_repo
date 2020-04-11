@@ -10,7 +10,6 @@ resource "helm_release" "nginx-ingress" {
   name       = "nginx-ingress-test2"
   repository = data.helm_repository.stable.metadata[0].name
   chart      = "nginx-ingress"
-  version    = "1.34.3"
   
   values = [<<EOF
 controller:
