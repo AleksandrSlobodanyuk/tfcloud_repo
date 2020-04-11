@@ -1,1 +1,2 @@
 gke-helm/terraform/.terraform/*
+gke-helm/k8s-svc.json
